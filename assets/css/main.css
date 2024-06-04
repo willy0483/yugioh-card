@@ -1,8 +1,9 @@
 .cards {
   max-width: 18rem;
   height: 24rem;
-  margin: auto;
+  margin: 10rem auto;
 }
+
 pre {
   border-radius: 1rem;
   position: relative;
@@ -12,6 +13,7 @@ pre {
   transform: perspective(5000px) rotateY(0deg) rotateX(0deg);
   transition: transform 0.5s ease-in-out;
 }
+
 .cards img {
   position: absolute;
   width: 100%;

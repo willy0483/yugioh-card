@@ -1,6 +1,7 @@
 const pre = document.querySelector("pre");
 const cardsImg = document.getElementById("cardsImg");
 
+
 cardsImg.addEventListener("mousemove", (e) => {
   rotateElement(e, pre);
 });
@@ -23,8 +24,8 @@ function rotateElement(e, element) {
 
   // get offset from middle as a percentage
   // and tone it down a little
-  const offsetX = ((x - middleX) / middleX) * 15;
-  const offsetY = ((y - middleY) / middleY) * 15;
+  const offsetX = ((x - middleX) / middleX) * 25;
+  const offsetY = ((y - middleY) / middleY) * 35;
 
   // set rotation
   element.style.setProperty("--rotateX", offsetX + "deg");
