@@ -1,63 +1,23 @@
-
-/* #region Global*/
-*{
-    margin: 0;
-    padding: 0;
+.cards {
+  max-width: 18rem;
+  height: 24rem;
+  margin: auto;
 }
-body{
-    font-family: "Poppins", sans-serif;
+pre {
+  border-radius: 1rem;
+  position: relative;
+  max-width: 18rem;
+  height: 26.3rem;
+  transform-style: preserve-3d;
+  transform: perspective(5000px) rotateY(0deg) rotateX(0deg);
+  transition: transform 0.5s ease-in-out;
 }
-
-:root {
-    /* Theme colors */
-    --dark-navy: #1B262C;
-    --medium-blue: #0F4C75;
-    --light-blue: #3282B8;
-    --very-light-blue: #BBE1FA;
-  
-    /* Text colors */
-    --text-primary: var(--very-light-blue);
-    --text-secondary: var(--light-blue);
-
-    /* Black / White */
-    --white: #fff;
-    --black: #000;
-    --dark: #212121;
-    /* Background colors */
-    --background: var(--dark-navy);
-    --background-alt: var(--medium-blue);
-  }
-/* #endregion */
-
-
-body{
-    background-color: var(--dark);
-}
-
-main{
-    margin-top: 10rem;
-
-}
-
-/* IMAGE */
-.image-container{
-    position: relative;
-    display: flex;
-    width: 18rem;
-    height: 24rem;
-    border-radius: 0.75rem;
-    margin: 0 auto;
-    transform-style: preserve-3d;
-    background-color: #BBE1FA;
-}
-
-/* cards */
-.cards{
-    position: absolute;
-    inset: 1em;
-    place-content: center;
-    border-radius: 0.75rem;
-    transform: translateZ(75px);
-    transform-style: preserve-3d;
-    background-color: var(--medium-blue);
+.cards img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 1rem;
 }
