@@ -22,82 +22,42 @@ body{
     /* Black / White */
     --white: #fff;
     --black: #000;
-  
+    --dark: #212121;
     /* Background colors */
     --background: var(--dark-navy);
     --background-alt: var(--medium-blue);
   }
 /* #endregion */
 
-/* #region header-main*/
-.header-main{
-    background-color: var(--background);
+
+body{
+    background-color: var(--dark);
 }
 
-/* #endregion*/
+main{
+    margin-top: 10rem;
 
-/* #region h1*/
-.header-main hgroup{
-    padding: 1rem;
-    max-width: 239px;
-    margin: auto;
 }
-.header-main hgroup h1{
-    color: var(--very-light-blue);
-}
-/* #endregion */
 
-/* #region nav-main*/
-.nav-main{
+/* IMAGE */
+.image-container{
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 1rem 0.5rem 0;
-}
-.nav-main ul{
-    display: flex;
-    list-style: none;
-}
-.nav-main ul li{
-    margin: 0.1rem 1rem;
-}
-.nav-main a{
-    background-color: var(--background);
-    padding: 0.5rem 1rem;
-    text-decoration: none;
+    width: 18rem;
+    height: 24rem;
+    border-radius: 0.75rem;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    background-color: #BBE1FA;
 }
 
-    /* First/Last of type  */
-.nav-main ul:first-of-type a{
-    color: var(--text-secondary);
+/* cards */
+.cards{
+    position: absolute;
+    inset: 1em;
+    place-content: center;
+    border-radius: 0.75rem;
+    transform: translateZ(75px);
+    transform-style: preserve-3d;
+    background-color: var(--medium-blue);
 }
-.nav-main ul:last-of-type a{
-    color: var(--text-primary);
-}
-
- /* type :hover  */
- .nav-main a:hover{
-    background-color: var(--background-alt);
-    outline: 1px var(--white) solid;
- }
-
- .nav-main ul:first-of-type a:hover{
-    color: var(--text-primary);
-}
-/* #endregion*/
-
-
-
-
-/* #region media */
-@media (max-width: 700px){
-    .nav-main{
-        flex-direction: column;
-    }
-    .nav-main ul{
-        flex-direction: column;
-    }
-    .nav-main a{
-        display: block;
-    }
-}
-/* #endregion */
