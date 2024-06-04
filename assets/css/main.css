@@ -1,25 +1,37 @@
-.cards {
-  max-width: 18rem;
-  height: 24rem;
-  margin: 10rem auto;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-pre {
-  border-radius: 1rem;
+.card-gallery {
+  display: flex;
+  max-width: fit-content;
+  margin: auto;
+  gap: 1rem;
+}
+.cards {
+  width: 8rem;
+  height: 12rem;
+}
+
+.cardTilting {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
   position: relative;
-  max-width: 18rem;
-  height: 26.3rem;
   transform-style: preserve-3d;
   transform: perspective(5000px) rotateY(0deg) rotateX(0deg);
   transition: transform 0.5s ease-in-out;
 }
 
-.cards img {
+.cardsImg {
   position: absolute;
   width: 100%;
+  height: 100%;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
 }

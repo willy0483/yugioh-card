@@ -1,31 +1,34 @@
-const pre = document.querySelector("pre");
-const cardsImg = document.getElementById("cardsImg");
+const cards = document.querySelectorAll(".cardTilting");
 
+cards.forEach((card) => {
+  const img = card.querySelector(".cardsImg");
 
-cardsImg.addEventListener("mousemove", (e) => {
-  rotateElement(e, pre);
-});
+  img.addEventListener("mousemove", (e) => {
+    rotateElement(e, card);
+  });
 
-cardsImg.addEventListener("mouseleave", () => {
-  resetElement(pre);
+  img.addEventListener("mouseleave", () => {
+    resetElement(card);
+  });
 });
 
 function rotateElement(e, element) {
   // Remove transition for immediate effect on mousemove
   element.style.transition = "none";
 
-  // get mouse position
-  const x = e.clientX;
-  const y = e.clientY;
+  // get mouse position relative to the card
+  const rect = element.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
 
-  // find the middle
-  const middleX = window.innerWidth / 2;
-  const middleY = window.innerHeight / 2;
+  // find the middle of the card
+  const middleX = rect.width / 2;
+  const middleY = rect.height / 2;
 
   // get offset from middle as a percentage
   // and tone it down a little
-  const offsetX = ((x - middleX) / middleX) * 25;
-  const offsetY = ((y - middleY) / middleY) * 35;
+  const offsetX = ((x - middleX) / middleX) * 15;
+  const offsetY = ((y - middleY) / middleY) * 15;
 
   // set rotation
   element.style.setProperty("--rotateX", offsetX + "deg");
@@ -35,7 +38,7 @@ function rotateElement(e, element) {
 
 function resetElement(element) {
   // Add transition for smooth effect on mouse leave
-  element.style.transition = "transform 0.5s ease";
+  element.style.transition = "transform 0.5s ease-in-out";
   element.style.setProperty("--rotateX", "0deg");
   element.style.setProperty("--rotateY", "0deg");
   element.style.transform = "perspective(5000px) rotateY(0deg) rotateX(0deg)";
