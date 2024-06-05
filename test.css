@@ -1,0 +1,56 @@
+body {
+    background-color: black;
+}
+
+
+.card-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: auto;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.cards {
+    flex: 1 1 calc(25% - 2rem);
+    max-width: 12rem;
+    height: auto;
+    aspect-ratio: 2/3;
+    position: relative;
+}
+
+.cardTilting {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardsImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.flare {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* New properties for flare animation */
+    transition: top 0.1s ease, left 0.1s ease;
+}
