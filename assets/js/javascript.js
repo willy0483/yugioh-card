@@ -107,3 +107,54 @@ menuLink.forEach((links) => {
       "margin-left 0.5s ease-in-out 0.5s";
   });
 });
+
+// image slider
+document.addEventListener("DOMContentLoaded", function () {
+  const images = [
+    "assets/images/Uploads/Aether, the Empowering Dragon.jpg",
+    "assets/images/Uploads/Amulet Dragon.jpg",
+    "assets/images/Uploads/Red-Eyes Black Dragon.jpg",
+    "assets/images/Uploads/Yata-Garasu.jpg",
+    "assets/images/Uploads/Cyber Dragon.jpg",
+    "assets/images/Uploads/Pot of Greed.jpg",
+    "assets/images/Uploads/Exodia the Forbidden One.jpg",
+    "assets/images/Uploads/Dark Magician.jpg",
+    "assets/images/Uploads/Kashtira Fenrir.jpg",
+    "assets/images/Uploads/Bystial Druiswurm.jpg",
+  ];
+
+  const slider = document.getElementById("slider");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  const slidesInView = 3;
+  let currentIndex = 0;
+
+  function showSlides() {
+    slider.innerHTML = ""; // Clear existing images
+    for (let i = currentIndex; i < currentIndex + slidesInView; i++) {
+      const imgElement = document.createElement("img");
+      imgElement.className = "cardsImg";
+      imgElement.src = images[i % images.length]; // Use modulo to loop through images array
+      imgElement.alt = images[i % images.length].substring(
+        images[i % images.length].lastIndexOf("/") + 1,
+        images[i % images.length].lastIndexOf(".")
+      );
+      slider.appendChild(imgElement);
+    }
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length; // Use modulo to loop to the end
+    showSlides();
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length; // Use modulo to loop to the beginning
+    showSlides();
+  }
+
+  prevBtn.addEventListener("click", prevSlide);
+  nextBtn.addEventListener("click", nextSlide);
+
+  showSlides();
+});
