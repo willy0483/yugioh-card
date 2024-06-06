@@ -35,7 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function resetElement(element) {
-    element.style.transition = `transform ${getComputedStyle(document.documentElement).getPropertyValue('--transition-duration')} ease-in-out, box-shadow ${getComputedStyle(document.documentElement).getPropertyValue('--transition-duration')} ease-in-out`;
+    element.style.transition = `transform ${getComputedStyle(
+      document.documentElement
+    ).getPropertyValue(
+      "--transition-duration"
+    )} ease-in-out, box-shadow ${getComputedStyle(
+      document.documentElement
+    ).getPropertyValue("--transition-duration")} ease-in-out`;
     element.style.setProperty("--rotateX", "0deg");
     element.style.setProperty("--rotateY", "0deg");
     element.style.transform = "perspective(1000px) rotateY(0deg) rotateX(0deg)";
@@ -58,51 +64,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-
-
-
-
 // ASIDE MENU
-const myMenuOpen = document.getElementById('menuOpen')
-const myMenuClose = document.getElementById('menuClose')
+const myMenuOpen = document.getElementById("menuOpen");
+const myMenuClose = document.getElementById("menuClose");
 
+myMenuOpen.addEventListener("click", (e) => {
+  document.getElementById("sideMenu").style.width = "220px";
+  document.getElementById("sideMenu").style.transition =
+    "width 0.5s ease-in-out";
+  document.getElementById("main-container").style.transition =
+    "margin-left 0.5s ease-in-out";
 
-myMenuOpen.addEventListener('click', (e) => {
-  document.getElementById("sideMenu").style.width = "250px";
-  document.getElementById("main-container").style.marginLeft = "250px";
-  document.getElementById("sideMenu").style.transition = 'width 0.5s ease-in-out';
-  document.getElementById("main-container").style.transition = 'margin-left 0.5s ease-in-out';
+  myMenuOpen.style.visibility = "hidden";
+  myMenuOpen.style.transition = "visibility 0s ease-in-out";
 
-  myMenuOpen.style.visibility = 'hidden';
-  myMenuOpen.style.transition = 'visibility 0s ease-in-out';
+  document.getElementsByClassName("my-opacity")[0].style.opacity = "1";
+  document.getElementsByClassName("my-opacity")[1].style.opacity = "1";
+  document.getElementsByClassName("my-opacity")[2].style.opacity = "1";
+  document.getElementsByClassName("my-opacity")[3].style.opacity = "1";
+  document.getElementsByClassName("my-opacity")[4].style.opacity = "1";
+});
 
-  document.getElementsByClassName('my-opacity')[0].style.opacity = '1'
-  document.getElementsByClassName('my-opacity')[1].style.opacity = '1'
-  document.getElementsByClassName('my-opacity')[2].style.opacity = '1'
-  document.getElementsByClassName('my-opacity')[3].style.opacity = '1'
-  document.getElementsByClassName('my-opacity')[4].style.opacity = '1'
-
-})
-
-
-const menuLink = document.querySelectorAll('.my-opacity');
+const menuLink = document.querySelectorAll(".my-opacity");
 
 menuLink.forEach((links) => {
-  links.addEventListener('click', (e) => {
+  links.addEventListener("click", (e) => {
     e.preventDefault();
     document.getElementById("sideMenu").style.width = "0px";
     document.getElementById("main-container").style.marginLeft = "0px";
-    myMenuOpen.style.visibility = 'visible';
-    myMenuOpen.style.transition = 'visibility 0.5s ease-in-out 1s';
+    myMenuOpen.style.visibility = "visible";
+    myMenuOpen.style.transition = "visibility 0.5s ease-in-out 1s";
 
-    document.getElementsByClassName('my-opacity')[0].style.opacity = '0'
-    document.getElementsByClassName('my-opacity')[1].style.opacity = '0'
-    document.getElementsByClassName('my-opacity')[2].style.opacity = '0'
-    document.getElementsByClassName('my-opacity')[3].style.opacity = '0'
-    document.getElementsByClassName('my-opacity')[4].style.opacity = '0'
+    document.getElementsByClassName("my-opacity")[0].style.opacity = "0";
+    document.getElementsByClassName("my-opacity")[1].style.opacity = "0";
+    document.getElementsByClassName("my-opacity")[2].style.opacity = "0";
+    document.getElementsByClassName("my-opacity")[3].style.opacity = "0";
+    document.getElementsByClassName("my-opacity")[4].style.opacity = "0";
 
-    document.getElementById("sideMenu").style.transition = 'width 0.5s ease-in-out 0.5s';
-    document.getElementById("main-container").style.transition = 'margin-left 0.5s ease-in-out 0.5s';
-  })
+    document.getElementById("sideMenu").style.transition =
+      "width 0.5s ease-in-out 0.5s";
+    document.getElementById("main-container").style.transition =
+      "margin-left 0.5s ease-in-out 0.5s";
+  });
 });
