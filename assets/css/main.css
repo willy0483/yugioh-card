@@ -21,6 +21,9 @@
 body {
   background-color: #131313;
 }
+body::-webkit-scrollbar {
+  width: 0em;
+}
 hr {
   border: 3px solid var(--black);
 }
@@ -308,6 +311,63 @@ aside a:last-of-type {
 }
 /* #endregion */
 
+/* #region info */
+.info {
+  margin-top: 7rem;
+  background-color: var(--black);
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  padding: 2rem 2rem 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.info:last-of-type {
+  flex-direction: row-reverse;
+  margin-top: 1rem;
+}
+
+.info figure img {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-top: -5rem;
+  margin-bottom: 3rem;
+}
+
+.info figcaption {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info i {
+  font-size: 6rem;
+  color: var(--black);
+  filter: brightness(1.8);
+}
+.info header {
+  color: #d8bfd8;
+}
+
+.info article {
+  color: #e0e0e0;
+  background-color: #251a24;
+  padding: 1rem;
+  max-width: 700px;
+  height: 279px;
+  max-height: 279px;
+}
+
+.info p {
+  margin: 1.2rem 0;
+}
+
+/* Responsive adjustments */
+
+/* #endregion */
+
 /* #region Media queries for responsiveness */
 @media (max-width: 1024px) {
   .cards {
@@ -343,6 +403,51 @@ aside a:last-of-type {
 @media (min-width: 992px) {
   .card-gallery {
     gap: 30rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .info figure {
+    flex-direction: column;
+  }
+  .info figure img {
+    margin: auto;
+    margin-top: -5rem;
+  }
+  .info figure figcaption {
+    max-width: 268px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .info {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+  .info:last-of-type {
+    flex-direction: column;
+  }
+  .info figure {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .info figure img {
+    margin-bottom: 0;
+  }
+  .info figure figcaption {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .info i {
+    line-height: 7.8rem;
+    font-size: 9rem;
+  }
+  .info article {
+    margin: auto;
   }
 }
 
