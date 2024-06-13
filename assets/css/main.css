@@ -11,11 +11,14 @@
   --light-purple: #430e18; /* Chocolate cosmos */
 
   /* cards */
-  --card-width: 12rem;
-  --card-height: 18rem;
+  --card1-width: 12rem;
+  --card1-height: 18rem;
   --glare-opacity: 0.2;
   --glare-angle: 45deg;
   --transition-duration: 1.5s;
+
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
 }
 
 body {
